@@ -1,5 +1,3 @@
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../config/dio_config.dart';
 import '../../domain/data_sources/authentication_data_source.dart';
 import '../../domain/entities/user.dart';
@@ -10,18 +8,17 @@ class AuthenticationDataSourceImpl implements AuthenticationDataSource {
   AuthenticationDataSourceImpl();
 
   @override
-  Future<User> authenticate(String email, String password) async {
+  Future<User> authenticate(String username, String password) async {
     try {
       final response = await DioConfig.dioWithoutAuthorization.post(
-        '/login',
+        '/auth/login',        
         data: {
-          'email': email,
+          'username': username,
           'password': password,
         },
       );
 
-      var data = response.data['data'];
-
+      var data = response.data;      
       User user = UserModelMapper.fromJson(data);
 
       return user;

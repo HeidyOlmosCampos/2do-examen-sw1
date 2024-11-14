@@ -25,13 +25,6 @@ void main() async {
   final emergencyRepository = EmergencyRepositoryImpl(emergencyDataSource);
   final emergencyUseCase = EmergencyUseCaseImpl(emergencyRepository);
 
-  final formularyDataSource = FormularyDataSourceImpl();
-  final formularyRepository = FormularyRepositoryImpl(formularyDataSource);
-  final formularyUseCase = FormularyUseCaseImpl(formularyRepository);
-
-  final equipmentDataSource = EquipmentDataSourceImpl();
-  final equipmentRepository = EquipmentRepositoryImpl(equipmentDataSource);
-  final equipmentUseCase = EquipmentUseCaseImpl(equipmentRepository);
 
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -39,8 +32,6 @@ void main() async {
     navigatorKey: navigatorKey,
     authenticationUseCase: authenticationUseCase,
     emergencyUseCase: emergencyUseCase,
-    formularyUseCase: formularyUseCase,
-    equipmentUseCase: equipmentUseCase,
   ));
 }
 
@@ -48,8 +39,6 @@ class MyApp extends StatelessWidget {
   final GlobalKey<NavigatorState> navigatorKey;
   final AuthenticationUseCase authenticationUseCase;
   final EmergencyUseCase emergencyUseCase;
-  final FormularyUseCase formularyUseCase;
-  final EquipmentUseCase equipmentUseCase;
 
   // ignore: use_super_parameters
   const MyApp({
@@ -57,8 +46,6 @@ class MyApp extends StatelessWidget {
     required this.navigatorKey,
     required this.authenticationUseCase,
     required this.emergencyUseCase,
-    required this.formularyUseCase,
-    required this.equipmentUseCase,
   }) : super(key: key);
 
   @override
@@ -73,15 +60,6 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => EmergencyImageProvider(emergencyUseCase),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => FormularyProvider(formularyUseCase),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => EquipmentProvider(equipmentUseCase),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => ResourceProvider(equipmentUseCase),
         ),
         ChangeNotifierProvider(
           create: (_) => ActionProvider(emergencyUseCase),

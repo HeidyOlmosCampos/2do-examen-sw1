@@ -5,3 +5,4 @@ export 'form201.dart';
 export 'equipment.dart';
 export 'resource.dart';
 export 'actionn.dart';
+export 'notificacion.dart';

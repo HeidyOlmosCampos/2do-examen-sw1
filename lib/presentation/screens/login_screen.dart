@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: const BoxDecoration(color: Color.fromARGB(255, 1, 25, 45)),
+        decoration: const BoxDecoration(color: Color.fromARGB(255, 24, 1, 45)),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,7 +190,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             }
                           },
                           height: 50,
-                          color: red,
+                          color: Colors.purple,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),

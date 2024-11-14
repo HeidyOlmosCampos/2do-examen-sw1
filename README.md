@@ -23,7 +23,7 @@ Aplicación móvil para iniciar un proyecto con Flutter utilizando Clean Archite
 1. Clonar el repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/SebastianPadillaZabala/Flutter-Template.git
+git clone 
 ```
 
 2. Navegar al directorio del proyecto:

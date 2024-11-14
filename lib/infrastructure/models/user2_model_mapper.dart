@@ -1,3 +1,4 @@
+
 import '../../domain/entities/index.dart';
 
 class User2ModelMapper {
@@ -26,18 +27,18 @@ class User2ModelMapper {
 
   static Map<String, dynamic> toJson(User model) {
     return {
-      'id': model.id,
-      'created_at': model.createdAt.toIso8601String(),
-      'updated_at': model.updatedAt.toIso8601String(),
+      'id': model.uid,
+      'created_at': "",
+      'updated_at': "",
       'name': model.name,
-      'last_name': model.lastName,
+      'last_name': "",
       'email': model.email,
-      'cellphone': model.cellphone,
-      'grade': model.grade,
-      'birthdate': model.birthdate.toIso8601String(),
-      'url_image': model.urlImage,
-      'is_active': model.isActive,
-      'is_deleted': model.isDeleted,
+      'cellphone': "",
+      'grade': "",
+      'birthdate': "",
+      'url_image': "",
+      'is_active': "",
+      'is_deleted': "",
       'role': model.role,
     };
   }
